@@ -81,4 +81,317 @@
   }
   .btn-primary { background: var(--navy); color: #fff; margin-top: 1.5rem; }
   .btn-primary:hover { background: var(--navy-dark); }
-  .btn-outline { color: var(--navy);
+  .btn-outline { color: var(--navy); background: #fff; }
+  .btn-outline:hover { background: var(--bg); }
+  .contact-info { margin-top: 1.25rem; font-size: 0.92rem; color: var(--muted); text-align: left; }
+  .contact-info a { color: var(--muted); }
+
+  /* Main */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .tabs a {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .tabs a:hover { color: var(--navy); background: var(--bg); }
+  .tabs a[aria-current="page"] { background: var(--navy); color: #fff; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  .js .panel { display: none; }
+  .js .panel.active { display: block; }
+  .panel + .panel { margin-top: 1.5rem; }
+  .js .panel + .panel { margin-top: 0; }
+
+  h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--navy);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  h2.spaced { margin-top: 2.5rem; }
+  p + p { margin-top: 1rem; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+  .fact { background: var(--bg); border-radius: 6px; padding: 0.9rem 1rem; }
+  .fact span { display: block; font-size: 0.85rem; color: var(--muted); }
+  .fact strong { font-weight: 600; }
+
+  .job + .job { margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border); }
+  .job-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .job h3 { font-size: 1.1rem; font-weight: 700; }
+  .job .org { color: var(--navy); font-weight: 600; }
+  .job .date { color: var(--muted); font-size: 0.95rem; white-space: nowrap; }
+  .job ul { margin-top: 0.6rem; padding-left: 1.2rem; }
+  .job li + li { margin-top: 0.35rem; }
+
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .project { border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; display: flex; flex-direction: column; }
+  .project h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .project p { color: var(--muted); font-size: 0.98rem; flex: 1; }
+  .project .tools { font-size: 0.9rem; color: var(--text); margin-top: 0.75rem; }
+  .project a { margin-top: 0.75rem; font-weight: 600; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .skills h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; }
+  .tags li { background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.92rem; }
+
+  .certs { list-style: none; }
+  .certs li { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
+  .certs li:last-child { border-bottom: 0; }
+  .certs span { color: var(--muted); }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 0 1.5rem 2.5rem; }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; padding: 1.5rem 1rem; }
+    .profile { position: static; }
+    .card { padding: 1.5rem; }
+    .tabs a { flex: 1 1 30%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="profile">
+    <img src="headshot.JPEG" alt="Headshot of Nicholas Iwaszko">
+    <h1>Nicholas Iwaszko</h1>
+    <p class="title">Accounting &amp; Finance Student</p>
+    <p class="school">Rutgers University, Honors College</p>
+
+    <p class="statement">I'm an accounting and finance student in the Rutgers University Honors College with hands-on experience in tax preparation and financial modeling, seeking internships in accounting, tax, and FP&amp;A.</p>
+
+    <a class="btn btn-primary" href="Iwaszko_Nicholas_Resume.pdf" target="_blank" rel="noopener">View Résumé</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/nicholas-iwaszko/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn btn-outline" href="mailto:nicholas.iwaszko1@gmail.com">Email Me</a>
+
+    <div class="contact-info">
+      <a href="mailto:nicholas.iwaszko1@gmail.com">nicholas.iwaszko1@gmail.com</a>
+    </div>
+  </aside>
+
+  <main>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+    </nav>
+
+    <section class="card panel" id="about">
+      <h2>About Me</h2>
+      <p>I'm a second-year student at Rutgers studying accounting and finance, and I've made the Dean's List every semester. I attended a vocational high school with a finance and accounting track, which led to a tax internship at a CPA firm and, more recently, an FP&amp;A externship.</p>
+      <p>On campus, I'm Vice President of the Rutgers University Accounting Association, Deputy Auditor on the University Allocation Board, and a member of Beta Alpha Psi. Outside of work and school, I swim with Rutgers Club Swim, play in the Guitar Ensemble, and do landscape photography. I'm fluent in English and Polish.</p>
+
+      <div class="facts">
+        <div class="fact"><span>Degree</span><strong>B.S. Accounting &amp; Finance</strong></div>
+        <div class="fact"><span>GPA</span><strong>3.9 / 4.0</strong></div>
+        <div class="fact"><span>Graduation</span><strong>Expected 2029</strong></div>
+        <div class="fact"><span>Honors</span><strong>Dean's List, all semesters</strong></div>
+      </div>
+    </section>
+
+    <section class="card panel" id="experience">
+      <h2>Work Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Financial Planning Extern <span class="org">| Attronica</span></h3>
+          <span class="date">Jun 2026 – Sep 2026</span>
+        </div>
+        <ul>
+          <li>Analyzed four years of audited financials for a mid-sized private firm using Excel and AI-assisted modeling, delivering specific recommendations to Sales, Operations, and Finance leadership.</li>
+          <li>Built a segment-specific income statement and driver-based projections using Excel and AI tools, constructed a DCF valuation, and cross-checked against comparable companies.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Tax Intern <span class="org">| Shah &amp; Sokoloff CPA</span></h3>
+          <span class="date">Sep 2024 – Jun 2025</span>
+        </div>
+        <ul>
+          <li>Prepared and e-filed 100+ individual and business tax returns in compliance with federal and state regulations.</li>
+          <li>Maintained tax documentation for four companies (~$1M revenue), supporting Form 1120 and Schedule K-1 filings.</li>
+          <li>Used ProSeries and Excel to analyze financial data, streamline documentation, and resolve missing information requests with clients.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>General Member, Technology Sector <span class="org">| Fairleigh Dickinson Student Managed Fund</span></h3>
+          <span class="date">Aug 2024 – May 2025</span>
+        </div>
+        <ul>
+          <li>Analyzed equities and market trends using Bloomberg Terminal data for a student-managed fund overseeing a $100,000 portfolio across 20+ holdings.</li>
+          <li>Evaluated technology sector companies by reviewing earnings reports, revenue growth, and valuations to inform investment recommendations.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Front Desk Operations <span class="org">| Parsippany Police Athletic League</span></h3>
+          <span class="date">Dec 2023 – Aug 2026</span>
+        </div>
+        <ul>
+          <li>Managed POS transactions and daily cash reconciliations for a nonprofit youth center, processing 25–50 transactions per shift with 100% accuracy.</li>
+          <li>Assisted members with registrations, payments, and program questions in a high-traffic youth center.</li>
+          <li>Coordinated setup and breakdown logistics for large community events, arranging 100+ tables and 200+ chairs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card panel" id="leadership">
+      <h2>Leadership</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Vice President <span class="org">| Rutgers University Accounting Association</span></h3>
+          <span class="date">May 2026 – Present</span>
+        </div>
+        <ul>
+          <li>Serve on the executive board supporting member engagement and professional development programming.</li>
+          <li>Coordinate networking opportunities connecting members with career resources and industry professionals.</li>
+          <li>Organize on-campus recruiting sessions with all Big 4 firms, mid-size firms, and Bank of America.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Deputy Auditor <span class="org">| Rutgers University Allocation Board</span></h3>
+          <span class="date">Apr 2026 – Present</span>
+        </div>
+        <ul>
+          <li>Evaluated and allocated funding for 400+ student organizations, distributing a $4,500,000 budget across campus programs and events, contributing to student involvement and ensuring allocated funds are going where stated.</li>
+          <li>Collaborated with student leaders to assess financial needs and prioritize initiatives through data-driven decision-making, utilizing platforms such as Excel to ensure transparency and equality.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card panel" id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Attronica DCF Valuation</h3>
+          <p>Built a discounted cash flow valuation for a mid-sized private AV systems integrator during my FP&amp;A externship, projecting free cash flow and cross-checking the result against comparable companies.</p>
+          <p class="tools">Excel · DCF · Comparable companies</p>
+          <a href="attronica-dcf.pdf" target="_blank" rel="noopener">View project summary (PDF)</a>
+        </article>
+        <article class="project">
+          <h3>Segment Income Statement &amp; Five-Year Projection</h3>
+          <p>Created a segment-specific income statement and driver-based five-year forecast with base, downside, and upside scenarios, and corrected working-capital ratios (DSO, DIO, DPO, CCC) across four fiscal years.</p>
+          <p class="tools">Excel · Forecasting · Scenario analysis</p>
+          <a href="attronica-projections.pdf" target="_blank" rel="noopener">View project summary (PDF)</a>
+        </article>
+        <article class="project">
+          <h3>Bank of America Investment Banking Simulation</h3>
+          <p>Completed Bank of America's investment banking job simulation on Forage, working through tasks modeled on the work of a junior banking analyst.</p>
+          <p class="tools">Forage · Financial analysis</p>
+          <a href="bofa-forage-certificate.pdf" target="_blank" rel="noopener">View certificate (PDF)</a>
+        </article>
+        <article class="project">
+          <h3>10-K Financial Statement Analysis</h3>
+          <p>Analyzed Activision Blizzard's balance sheet and consolidated statement of changes in shareholders' equity from its annual report for an accounting course.</p>
+          <p class="tools">SEC filings · Financial statements</p>
+          <a href="https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm" target="_blank" rel="noopener">View the 10-K on SEC.gov</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="card panel" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Financial Analysis</h3>
+          <ul class="tags">
+            <li>Financial modeling</li>
+            <li>DCF valuation</li>
+            <li>Driver-based forecasting</li>
+            <li>Ratio analysis</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Accounting &amp; Tax</h3>
+          <ul class="tags">
+            <li>Tax preparation</li>
+            <li>Form 1120 &amp; K-1</li>
+            <li>10-K analysis</li>
+            <li>Cash reconciliation</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Software</h3>
+          <ul class="tags">
+            <li>Excel (MOS certified)</li>
+            <li>Bloomberg Terminal</li>
+            <li>ProSeries</li>
+            <li>AI modeling tools</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul class="tags">
+            <li>English (fluent)</li>
+            <li>Polish (fluent)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="spaced">Certifications</h2>
+      <ul class="certs">
+        <li><strong>Investment Banking Job Simulation</strong><span>Bank of America, via Forage</span></li>
+        <li><strong>Bloomberg Finance Fundamentals</strong><span>Bloomberg</span></li>
+        <li><strong>Bloomberg Market Concepts</strong><span>Bloomberg</span></li>
+        <li><strong>Microsoft Office Specialist: Excel</strong><span>Microsoft</span></li>
+      </ul>
+    </section>
+  </main>
+
+</div>
+
+<footer>© 2026 Nicholas Iwaszko</footer>
+
+<script>
+  (function () {
+    var panels = document.querySelectorAll(".panel");
+    var links = document.querySelectorAll(".tabs a");
+    function show() {
+      var id = (location.hash || "#about").slice(1);
+      var target = document.getElementById(id);
+      if (!target || !target.classList.contains("panel")) id = "about";
+      panels.forEach(function (p) { p.classList.toggle("active", p.id === id); });
+      links.forEach(function (a) {
+        if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page");
+        else a.removeAttribute("aria-current");
+      });
+    }
+    window.addEventListener("hashchange", show);
+    show();
+  })();
+</script>
+</body>
+</html>

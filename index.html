@@ -3,338 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nicholas Iwaszko | Rutgers University</title>
+<title>Nicholas Iwaszko | Accounting & Finance</title>
 <meta name="description" content="Nicholas Iwaszko, accounting and finance student at Rutgers University seeking internships in accounting, tax, and FP&A.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
 <style>
   :root {
-    --paper: #F3F5F2;
-    --ink: #1A2421;
-    --muted: #5B6863;
-    --accent: #2F6B4F;
-    --rule: #C7D3D6;
-    --surface: #FFFFFF;
-    --serif: "Young Serif", Georgia, "Times New Roman", serif;
-    --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #141A18;
-      --ink: #E4EAE6;
-      --muted: #9AA8A2;
-      --accent: #7FC1A0;
-      --rule: #34444A;
-      --surface: #1B2320;
-    }
+    --navy: #1F3A5F;
+    --navy-dark: #162B47;
+    --bg: #F5F7FA;
+    --card: #FFFFFF;
+    --text: #1F2933;
+    --muted: #52606D;
+    --border: #E4E7EB;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 1.0625rem;
+    font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+    font-size: 1.05rem;
     line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
   }
-  a { color: var(--accent); text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+  a { color: var(--navy); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 
-  header.top { border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 10; }
-  nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 6px; }
-  .js .panel { display: none; }
-  .js .panel.active { display: block; }
-  .panel { min-height: calc(100vh - 140px); }
-  header.top .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
-  .mark { font-family: var(--serif); font-size: 1.1rem; text-decoration: none; color: var(--ink); }
-  nav ul { list-style: none; display: flex; gap: 1.25rem; flex-wrap: wrap; }
-  nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
-  nav a:hover { color: var(--ink); }
-
-  .hero { padding: 4rem 0 3rem; }
-  .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.5rem, 6.5vw, 4rem); line-height: 1.05; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 2.5rem; align-items: center; }
-  .headshot { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border: 1px solid var(--rule); display: block; }
-  .hero .sub { margin-top: 0.75rem; font-size: 1.2rem; color: var(--muted); max-width: 52ch; }
-  .actions { list-style: none; margin-top: 1.75rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
-  .actions a {
-    display: inline-block; padding: 0.65rem 1.1rem;
-    border: 1px solid var(--ink); color: var(--ink);
-    text-decoration: none; font-weight: 500;
+  .layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
   }
-  .actions a:hover { background: var(--ink); color: var(--paper); }
-  .actions a.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 
-  .facts {
-    margin-top: 2.75rem;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    background: var(--surface); border: 1px solid var(--rule);
+  /* Sidebar */
+  .profile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: sticky;
+    top: 2rem;
   }
-  .facts div { padding: 1rem 1.25rem; border-right: 1px solid var(--rule); }
-  .facts div:last-child { border-right: 0; }
-  .facts dt { color: var(--muted); font-size: 0.875rem; }
-  .facts dd { font-weight: 500; margin-top: 0.15rem; }
-
-  section { padding: 3.25rem 0; }
-  #home { padding: 0; }
-  .about-block { margin-top: 3rem; }
-  section h2 { font-family: var(--serif); font-weight: 400; font-size: 1.8rem; margin-bottom: 1.5rem; }
-  .prose p { max-width: 64ch; }
-  .prose p + p { margin-top: 1rem; }
-
-  .entries { display: grid; gap: 2rem; }
-  .entry { display: grid; grid-template-columns: 10.5rem 1fr; gap: 1.5rem; }
-  .entry .when { color: var(--muted); font-size: 0.95rem; padding-top: 0.15rem; }
-  .entry h3 { font-size: 1.1rem; font-weight: 600; }
-  .entry .org { color: var(--accent); font-weight: 500; }
-  .entry ul { margin-top: 0.5rem; padding-left: 1.1rem; max-width: 62ch; }
-  .entry li + li { margin-top: 0.3rem; }
-  .entry li::marker { color: var(--muted); }
-
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-  .project { border-top: 3px solid var(--accent); padding-top: 0.9rem; }
-  .project h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; }
-  .project p { color: var(--muted); }
-  .project .tools { margin-top: 0.6rem; font-size: 0.9rem; color: var(--ink); }
-
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  .list { list-style: none; }
-  .list li { padding: 0.55rem 0; border-bottom: 1px solid var(--rule); }
-  .list span { display: block; color: var(--muted); font-size: 0.9rem; }
-
-  footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; color: var(--muted); font-size: 0.9rem; }
-
-  @media (max-width: 640px) {
-    .hero { padding: 2.75rem 0 2.25rem; }
-    .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .headshot { max-width: 170px; order: -1; }
-    .entry { grid-template-columns: 1fr; gap: 0.2rem; }
-    .two-col { grid-template-columns: 1fr; gap: 2rem; }
-    .facts div { border-right: 0; border-bottom: 1px solid var(--rule); }
-    .facts div:last-child { border-bottom: 0; }
+  .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 25%;
+    border: 4px solid var(--bg);
+    display: block;
+    margin: 0 auto 1.25rem;
   }
-</style>
-</head>
-<body>
-
-<header class="top">
-  <div class="wrap">
-    <a class="mark" href="#home">Nicholas Iwaszko</a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="panel" id="home">
-  <div class="wrap hero">
-   <div class="hero-grid">
-    <div>
-    <h1>Nicholas Iwaszko</h1>
-    <p class="sub">Accounting and finance student in the Rutgers University Honors College, seeking internships in accounting, tax, and FP&A.</p>
-    <ul class="actions">
-      <li><a class="primary" href="Iwaszko_Nicholas_Resume.pdf" target="_blank" rel="noopener">View résumé</a></li>
-      <li><a href="mailto:nicholas.iwaszko1@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/nicholas-iwaszko/" target="_blank" rel="noopener">LinkedIn</a></li>
-    </ul>
-    </div>
-    <img class="headshot" src="headshot.JPEG" alt="Headshot of Nicholas Iwaszko" width="1568" height="2352">
-   </div>
-
-    <dl class="facts">
-      <div><dt>School</dt><dd>Rutgers University, Honors College</dd></div>
-      <div><dt>Degree</dt><dd>B.S. Accounting &amp; Finance</dd></div>
-      <div><dt>GPA</dt><dd>3.9 / 4.0</dd></div>
-      <div><dt>Expected graduation</dt><dd>2029</dd></div>
-    </dl>
-
-    <div class="prose about-block">
-      <h2>About</h2>
-      <p>I'm a second-year student at Rutgers studying accounting and finance, and I've made the Dean's List every semester. I attended a vocational high school with a finance and accounting track, which led to a tax internship at a CPA firm and, more recently, an FP&A externship.</p>
-      <p>On campus, I'm Vice President of the Rutgers University Accounting Association, Deputy Auditor on the University Allocation Board, and a member of Beta Alpha Psi. Outside of work and school, I swim with Rutgers Club Swim, play in the Guitar Ensemble, and do landscape photography. I'm fluent in English and Polish.</p>
-    </div>
-  </div>
-  </section>
-
-  <section class="panel" id="experience">
-    <div class="wrap">
-      <h2>Experience</h2>
-      <div class="entries">
-
-        <article class="entry">
-          <div class="when">Jun 2026 – Sep 2026</div>
-          <div>
-            <h3>Financial Planning Extern <span class="org">· Attronica</span></h3>
-            <ul>
-              <li>Analyzed four years of audited financials for a mid-sized private firm using Excel and AI-assisted modeling, delivering specific recommendations to Sales, Operations, and Finance leadership.</li>
-              <li>Built a segment-specific income statement and driver-based projections using Excel and AI tools, constructed a DCF valuation, and cross-checked against comparable companies.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Sep 2024 – Jun 2025</div>
-          <div>
-            <h3>Tax Intern <span class="org">· Shah &amp; Sokoloff CPA</span></h3>
-            <ul>
-              <li>Prepared and e-filed 100+ individual and business tax returns in compliance with federal and state regulations.</li>
-              <li>Maintained tax documentation for four companies (~$1M revenue), supporting Form 1120 and Schedule K-1 filings.</li>
-              <li>Used ProSeries and Excel to analyze financial data, streamline documentation, and resolve missing information requests with clients.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Aug 2024 – May 2025</div>
-          <div>
-            <h3>General Member, Technology Sector <span class="org">· Fairleigh Dickinson Student Managed Fund</span></h3>
-            <ul>
-              <li>Analyzed equities and market trends using Bloomberg Terminal data for a student-managed fund overseeing a $100,000 portfolio across 20+ holdings.</li>
-              <li>Evaluated technology sector companies by reviewing earnings reports, revenue growth, and valuations to inform investment recommendations.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Dec 2023 – Aug 2026</div>
-          <div>
-            <h3>Front Desk Operations <span class="org">· Parsippany Police Athletic League</span></h3>
-            <ul>
-              <li>Managed POS transactions and daily cash reconciliations for a nonprofit youth center, processing 25–50 transactions per shift with 100% accuracy.</li>
-              <li>Assisted members with registrations, payments, and program questions in a high-traffic youth center.</li>
-              <li>Coordinated setup and breakdown logistics for large community events, arranging 100+ tables and 200+ chairs.</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="leadership">
-    <div class="wrap">
-      <h2>Leadership</h2>
-      <div class="entries">
-
-        <article class="entry">
-          <div class="when">May 2026 – Present</div>
-          <div>
-            <h3>Vice President <span class="org">· Rutgers University Accounting Association</span></h3>
-            <ul>
-              <li>Serve on the executive board supporting member engagement and professional development programming.</li>
-              <li>Coordinate networking opportunities connecting members with career resources and industry professionals.</li>
-              <li>Organize on-campus recruiting sessions with all Big 4 firms, mid-size firms, and Bank of America.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Apr 2026 – Present</div>
-          <div>
-            <h3>Deputy Auditor <span class="org">· Rutgers University Allocation Board</span></h3>
-            <ul>
-              <li>Evaluated and allocated funding for 400+ student organizations, distributing a $4,500,000 budget across campus programs and events, contributing to student involvement and ensuring allocated funds are going where stated.</li>
-              <li>Collaborated with student leaders to assess financial needs and prioritize initiatives through data-driven decision-making, utilizing platforms such as Excel to ensure transparency and equality.</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="projects">
-    <div class="wrap">
-      <h2>Projects</h2>
-      <div class="projects">
-        <article class="project">
-          <h3>Attronica DCF valuation</h3>
-          <p>Discounted cash flow valuation of a mid-sized private firm, cross-checked against comparable companies.</p>
-          <p class="tools">Excel</p>
-        </article>
-        <article class="project">
-          <h3>Segment income statement and projections</h3>
-          <p>Driver-based, five-year projections for a single business segment with base, downside, and upside scenarios.</p>
-          <p class="tools">Excel</p>
-        </article>
-        <article class="project">
-          <h3>10-K financial statement analysis</h3>
-          <p>Analyzed Activision Blizzard's balance sheet and statement of changes in shareholders' equity.</p>
-          <p class="tools">SEC filings, Excel</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="skills">
-    <div class="wrap two-col">
-      <div>
-        <h2>Certifications</h2>
-        <ul class="list">
-          <li>Investment Banking Job Simulation<span>Bank of America, via Forage</span></li>
-          <li>Bloomberg Finance Fundamentals<span>Bloomberg</span></li>
-          <li>Bloomberg Market Concepts<span>Bloomberg</span></li>
-          <li>Microsoft Office Specialist: Excel<span>Microsoft</span></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Skills</h2>
-        <ul class="list">
-          <li>Excel<span>Financial modeling, DCF valuation, driver-based forecasting</span></li>
-          <li>ProSeries<span>Individual and business tax preparation</span></li>
-          <li>Bloomberg Terminal<span>Equity and market research</span></li>
-          <li>Languages<span>English and Polish (fluent)</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="contact">
-    <div class="wrap prose">
-      <h2>Contact</h2>
-      <p>I'm currently looking for internship opportunities. Feel free to reach out at <a href="mailto:nicholas.iwaszko1@gmail.com">nicholas.iwaszko1@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/nicholas-iwaszko/" target="_blank" rel="noopener">LinkedIn</a>.</p>
-      <ul class="actions">
-        <li><a class="primary" href="Iwaszko_Nicholas_Resume.pdf" target="_blank" rel="noopener">View résumé</a></li>
-        <li><a href="mailto:nicholas.iwaszko1@gmail.com">Email</a></li>
-        <li><a href="https://www.linkedin.com/in/nicholas-iwaszko/" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© 2026 Nicholas Iwaszko</div>
-</footer>
-
-<script>
-  (function () {
-    var panels = document.querySelectorAll(".panel");
-    var links = document.querySelectorAll("nav a");
-    function show() {
-      var id = (location.hash || "#home").slice(1);
-      if (!document.getElementById(id) || !document.getElementById(id).classList.contains("panel")) id = "home";
-      panels.forEach(function (p) { p.classList.toggle("active", p.id === id); });
-      links.forEach(function (a) {
-        if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page");
-        else a.removeAttribute("aria-current");
-      });
-      window.scrollTo(0, 0);
-    }
-    window.addEventListener("hashchange", show);
-    show();
-  })();
-</script>
-</body>
-</html>
+  .profile h1 { font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+  .profile .title { color: var(--navy); font-weight: 600; margin-top: 0.25rem; }
+  .profile .school { color: var(--muted); font-size: 0.95rem; }
+  .profile .statement {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.98rem;
+    text-align: left;
+  }
+  .btn {
+    display: block;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.6rem;
+    border: 1px solid var(--navy);
+  }
+  .btn-primary { background: var(--navy); color: #fff; margin-top: 1.5rem; }
+  .btn-primary:hover { background: var(--navy-dark); }
+  .btn-outline { color: var(--navy);

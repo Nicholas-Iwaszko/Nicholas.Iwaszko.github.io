@@ -52,6 +52,8 @@
 
   .hero { padding: 4rem 0 3rem; }
   .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.5rem, 6.5vw, 4rem); line-height: 1.05; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 2.5rem; align-items: center; }
+  .headshot { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--rule); display: block; }
   .hero .sub { margin-top: 0.75rem; font-size: 1.2rem; color: var(--muted); max-width: 52ch; }
   .actions { list-style: none; margin-top: 1.75rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
   .actions a {
@@ -101,6 +103,8 @@
 
   @media (max-width: 640px) {
     .hero { padding: 2.75rem 0 2.25rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .headshot { max-width: 170px; order: -1; }
     .entry { grid-template-columns: 1fr; gap: 0.2rem; }
     .two-col { grid-template-columns: 1fr; gap: 2rem; }
     .facts div { border-right: 0; border-bottom: 1px solid var(--rule); }
@@ -128,6 +132,8 @@
 
 <main>
   <div class="wrap hero">
+   <div class="hero-grid">
+    <div>
     <h1>Nicholas Iwaszko</h1>
     <p class="sub">Accounting and finance student in the Rutgers University Honors College, seeking internships in accounting, tax, and FP&A.</p>
     <ul class="actions">
@@ -135,165 +141,8 @@
       <li><a href="mailto:nicholas.iwaszko1@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/nicholas-iwaszko/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
+    </div>
+    <img class="headshot" src="headshot.jpg" alt="Headshot of Nicholas Iwaszko" width="480" height="600">
+   </div>
 
     <dl class="facts">
-      <div><dt>School</dt><dd>Rutgers University, Honors College</dd></div>
-      <div><dt>Degree</dt><dd>B.S. Accounting &amp; Finance</dd></div>
-      <div><dt>GPA</dt><dd>3.9 / 4.0</dd></div>
-      <div><dt>Expected graduation</dt><dd>2029</dd></div>
-    </dl>
-  </div>
-
-  <section id="about">
-    <div class="wrap prose">
-      <h2>About</h2>
-      <p>I'm a second-year student at Rutgers studying accounting and finance, and I've made the Dean's List every semester. I attended a vocational high school with a finance and accounting track, which led to a tax internship at a CPA firm and, more recently, an FP&A externship.</p>
-      <p>On campus, I'm Vice President of the Rutgers University Accounting Association, Deputy Auditor on the University Allocation Board, and a member of Beta Alpha Psi. Outside of work and school, I swim with Rutgers Club Swim, play in the Guitar Ensemble, and do landscape photography. I'm fluent in English and Polish.</p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="wrap">
-      <h2>Experience</h2>
-      <div class="entries">
-
-        <article class="entry">
-          <div class="when">Jun 2026 – Sep 2026</div>
-          <div>
-            <h3>Financial Planning Extern <span class="org">· Attronica</span></h3>
-            <ul>
-              <li>Analyzed four years of audited financials for a mid-sized private firm and delivered recommendations to Sales, Operations, and Finance leadership.</li>
-              <li>Built a segment-specific income statement and driver-based projections, constructed a DCF valuation, and cross-checked it against comparable companies.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Sep 2024 – Jun 2025</div>
-          <div>
-            <h3>Tax Intern <span class="org">· Shah &amp; Sokoloff CPA</span></h3>
-            <ul>
-              <li>Prepared and e-filed 100+ individual and business tax returns in compliance with federal and state regulations.</li>
-              <li>Maintained tax documentation for four companies (~$1M revenue), supporting Form 1120 and Schedule K-1 filings.</li>
-              <li>Used ProSeries and Excel to analyze financial data and resolve missing information requests with clients.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Aug 2024 – May 2025</div>
-          <div>
-            <h3>General Member, Technology Sector <span class="org">· Fairleigh Dickinson Student Managed Fund</span></h3>
-            <ul>
-              <li>Analyzed equities using Bloomberg Terminal data for a $100,000 student-managed portfolio across 20+ holdings.</li>
-              <li>Evaluated technology companies' earnings, revenue growth, and valuations to inform investment recommendations.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Dec 2023 – Aug 2026</div>
-          <div>
-            <h3>Front Desk Operations <span class="org">· Parsippany Police Athletic League</span></h3>
-            <ul>
-              <li>Managed POS transactions and daily cash reconciliations, processing 25–50 transactions per shift with 100% accuracy.</li>
-              <li>Assisted members with registrations, payments, and program questions, and coordinated logistics for large community events.</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="leadership">
-    <div class="wrap">
-      <h2>Leadership</h2>
-      <div class="entries">
-
-        <article class="entry">
-          <div class="when">May 2026 – Present</div>
-          <div>
-            <h3>Vice President <span class="org">· Rutgers University Accounting Association</span></h3>
-            <ul>
-              <li>Organize on-campus recruiting sessions with the Big 4, mid-size accounting firms, and Bank of America.</li>
-              <li>Support member engagement and professional development programming on the executive board.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="when">Apr 2026 – Present</div>
-          <div>
-            <h3>Deputy Auditor <span class="org">· Rutgers University Allocation Board</span></h3>
-            <ul>
-              <li>Evaluate and allocate funding for 400+ student organizations from a $4.5M budget, ensuring funds are used as stated.</li>
-              <li>Work with student leaders to assess financial needs and prioritize initiatives using Excel-based analysis.</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="wrap">
-      <h2>Projects</h2>
-      <div class="projects">
-        <article class="project">
-          <h3>Attronica DCF valuation</h3>
-          <p>Discounted cash flow valuation of a mid-sized private firm, cross-checked against comparable companies.</p>
-          <p class="tools">Excel</p>
-        </article>
-        <article class="project">
-          <h3>Segment income statement and projections</h3>
-          <p>Driver-based, five-year projections for a single business segment with base, downside, and upside scenarios.</p>
-          <p class="tools">Excel</p>
-        </article>
-        <article class="project">
-          <h3>10-K financial statement analysis</h3>
-          <p>Analyzed Activision Blizzard's balance sheet and statement of changes in shareholders' equity.</p>
-          <p class="tools">SEC filings, Excel</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="wrap two-col">
-      <div>
-        <h2>Certifications</h2>
-        <ul class="list">
-          <li>Investment Banking Job Simulation<span>Bank of America, via Forage</span></li>
-          <li>Bloomberg Finance Fundamentals<span>Bloomberg</span></li>
-          <li>Bloomberg Market Concepts<span>Bloomberg</span></li>
-          <li>Microsoft Office Specialist: Excel<span>Microsoft</span></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Skills</h2>
-        <ul class="list">
-          <li>Excel<span>Financial modeling, DCF valuation, driver-based forecasting</span></li>
-          <li>ProSeries<span>Individual and business tax preparation</span></li>
-          <li>Bloomberg Terminal<span>Equity and market research</span></li>
-          <li>Languages<span>English and Polish (fluent)</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap prose">
-      <h2>Contact</h2>
-      <p>I'm currently looking for internship opportunities. Feel free to reach out at <a href="mailto:nicholas.iwaszko1@gmail.com">nicholas.iwaszko1@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/nicholas-iwaszko/" target="_blank" rel="noopener">LinkedIn</a>.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© 2026 Nicholas Iwaszko</div>
-</footer>
-
-</body>
-</html>
